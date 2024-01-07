@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiDynamicControls.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+   
+        <VerticalStackLayout
+            x:Name="stk_layout"
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+
+
+            <Button
+                x:Name="upBtn"
+                Clicked="OnUpClicked"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Text="למעלה"
+                WidthRequest="{OnPlatform Default=100,
+                                          Android=100,
+                                          WinUI=200}">
+                <Button.ImageSource>
+                    <FontImageSource
+                        FontFamily="MaterialSymbolsSharp"
+                        Glyph="&#xef7d;"
+                        Color="Black" />
+
+                </Button.ImageSource>
+            </Button>
+
+
+            <Label
+                x:Name="lbl_txt"
+                HorizontalOptions="Center"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.HeadingLevel="Level2"
+                Text="Welcome to .NET Multi-platform App UI" />
+
+            <Button
+                x:Name="downBtn"
+                Clicked="ODownClicked"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Text="למטה"
+                WidthRequest="{OnPlatform Default=100,
+                                          Android=100,
+                                          WinUI=200}">
+                <Button.ImageSource>
+                    <FontImageSource
+                        FontFamily="MaterialSymbolsSharp"
+                        Glyph="&#xe941;"
+                        Color="Black" />
+
+                </Button.ImageSource>
+            </Button>
+
+        </VerticalStackLayout>
+  
+
+</ContentPage>
