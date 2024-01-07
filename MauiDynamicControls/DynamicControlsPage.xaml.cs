@@ -73,11 +73,12 @@ public partial class DynamicControlsPage : ContentPage
 
         //כפתור 2
         //"\ue941"
-       
+
         //הרשמה לאירוע באמצעות anoymous functions =>
-       
+
 
         //התאמת גדלי אייקון - 20 ו-30
+    }
 
     private void ClickedUpEvent(object sender, EventArgs e)
     {
