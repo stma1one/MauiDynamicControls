@@ -7,16 +7,19 @@ public partial class DynamicControlsPage : ContentPage
     public DynamicControlsPage()
 	{
 		InitializeComponent();
+        //הוספת הפקדים בצורה דינאמית
 		InitializeControlls();
 	}
 
     private void InitializeControlls()
     {
 		//Add your Code Here
-
-		AddLayout();
-        AddLabels();
-        AddButtons();
+      
+		AddLayout();  //הוסף פריסה
+        
+        AddLabels();//הוסף את תווית
+       
+        AddButtons(); //הוסף כפתורים
 
 
 
@@ -24,108 +27,57 @@ public partial class DynamicControlsPage : ContentPage
 
     private void AddLayout()
     {
-        StackLayout stackLayout = new StackLayout();
-        stackLayout.Orientation = StackOrientation.Vertical;
-        stackLayout.Padding = new Thickness(30, 0);
-        stackLayout.Spacing = 35;
-        stackLayout.VerticalOptions = LayoutOptions.Center;
-        this.Content = stackLayout;
+        //יצירת פריסה חדשה
+
+        //לאורך או לרוחב
+
+        //רווח
+
+        //המרחק בין הפקדים בתוך הפריסה
+
+        //מיקום ביחס למסך
+
+        //הצבת הפקד בתוך המסך
+
+      
     }
     private void AddLabels()
     {
-        Label label = new Label()
-        {
-
-            HorizontalOptions = LayoutOptions.Center,
-            Text = "פה יופיע כמה פעמים לחצו על כל כפתור",
-            TextColor = Color.FromArgb("#7b32a8")
-
-
-
-        };
-       if(DeviceInfo.Current.Platform== DevicePlatform.Android || DeviceInfo.Current.Platform==DevicePlatform.iOS)
-         {
-            label.FontSize = 12;  
-        }
-       else
-            label.FontSize = 24;
-
-       StackLayout stk= (StackLayout)this.Content;
-        stk.Children.Add(label);
+        //יצירת הפקד
+        //{
+        
+        //}
+    
+       
+        //OnPlatform....=>DeviceInfo.Current.Platform=DevicePlatform....
+      
+       //הוספת הפקד למסך
+       //הערה: ניתן להגדיר שהפעולה הנוכחית מחזירה את הפקד החדש שנוצר 
+       //ונגדיר פעולה נוספת המקבלת רשימת פקדים ומוסיפה אותם לפריסה
+       
+     
        
     }
-   
+
+    //כפתורים
     private void AddButtons()
     {
-        StackLayout stk = (StackLayout)this.Content;
-        Button btnUp = new Button()
-        {
-            Text = "למעלה",
-            TextColor = Colors.Black,
-            HorizontalOptions = LayoutOptions.Center,
-            WidthRequest = 100,
-            HeightRequest = 100,
-            BorderWidth = 1,
-            CornerRadius = 50,
-            BackgroundColor=Colors.Yellow,
-            ImageSource = new FontImageSource()
-            {
-                Color = Colors.Red,
-                Glyph = "\uef7d",
-                FontFamily = "MaterialSymbolsSharp",
-                
-                Size=12,
-                
+        //נאתר את הפריסה
 
-            }                
-        };
-        btnUp.Clicked += ClickedUpEvent;
+        //ניצור כפתור 1==="\uef7d"
+
+        //הוספת איקון לכפתור
+
+        //הרשמה לאירוע
 
 
-        Button btnDown = new Button()
-        {
-            Text = "למטה",
-            TextColor= Colors.Black,
-            HorizontalOptions = LayoutOptions.Center,
-            WidthRequest = 100,
-            HeightRequest = 100,
-            BorderWidth = 1,
-            CornerRadius = 50,
-            BackgroundColor = Colors.Yellow,
-            ImageSource = new FontImageSource()
-            {
-                Color = Colors.Brown,
-                Glyph = "\ue941",
-                FontFamily = "MaterialSymbolsSharp",
-                Size = 12,
+        //כפתור 2
+        //"\ue941"
+       
+        //הרשמה לאירוע באמצעות anoymous functions =>
+       
 
-
-            }
-        };
-        btnDown.Clicked += (s, e) =>
-        {
-            countdown++;
-           
-            Label lbl_txt = stk.Children.Where( x => x is Label).FirstOrDefault() as Label;
-            lbl_txt.Text = $"  פעמים {countdown} לחצתי למטה";
-        };
-
-        if (DeviceInfo.Current.Platform == DevicePlatform.Android || DeviceInfo.Current.Platform == DevicePlatform.iOS)
-        {
-           ((FontImageSource) btnDown.ImageSource).Size = 20;
-            ((FontImageSource)btnUp.ImageSource).Size = 20;
-        }
-        else
-        {
-            ((FontImageSource)btnDown.ImageSource).Size = 30;
-            ((FontImageSource)btnUp.ImageSource).Size = 30;
-        }
-
-        stk.Children.Insert(0, btnUp);
-        stk.Children.Insert(stk.Children.Count, btnDown);
-        
-
-    }
+        //התאמת גדלי אייקון - 20 ו-30
 
     private void ClickedUpEvent(object sender, EventArgs e)
     {
